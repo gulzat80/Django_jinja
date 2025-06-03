@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Курстар</title>
+</head>
+<body>
+    <h1>Бардык курстар</h1>
+    <ul>
+        {% for course in courses %}
+            <li>
+                <a href="{% url 'course_detail' course.pk %}">
+                    {{ course.title }} - {{ course.instructor }}
+                </a>
+            </li>
+        {% empty %}
+            <li>Курс табылган жок.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
